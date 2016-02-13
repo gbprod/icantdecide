@@ -21,7 +21,7 @@ final class QuestionIdentifier
      *
      * @return QuestionIdentifier
      */
-    public static function generate($id)
+    public static function create($id)
     {
         return new self($id);
     }

@@ -7,7 +7,7 @@ namespace GBProd\ICantDecide\CoreDomain\Question;
  *
  * @author gbprod <contact@gb-prod.fr>
  */
-class Author
+final class Author
 {
     /**
      * @var string
