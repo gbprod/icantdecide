@@ -1,0 +1,5 @@
+services:
+    icantdecide.question_repository:
+        class: GBProd\ICantDecide\Infrastructure\Question\DoctrineQuestionRepository
+        arguments:
+            - "@doctrine.orm.entity_manager"
