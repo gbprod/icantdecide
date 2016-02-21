@@ -2,6 +2,8 @@
 
 namespace GBProd\ICantDecide\CoreDomain\Question;
 
+use Ramsey\Uuid\Uuid;
+
 /**
  * Identifier for questions
  *
@@ -21,9 +23,9 @@ final class QuestionIdentifier
      *
      * @return QuestionIdentifier
      */
-    public static function create($id)
+    public static function generate()
     {
-        return new self($id);
+        return new self(Uuid::uuid4());
     }
 
     /**

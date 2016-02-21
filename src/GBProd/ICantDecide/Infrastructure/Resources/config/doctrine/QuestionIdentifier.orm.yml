@@ -2,5 +2,4 @@ GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier:
     type: embeddable
     id:
         value:
-            type: string
-            length: 36
+            type: uuid
