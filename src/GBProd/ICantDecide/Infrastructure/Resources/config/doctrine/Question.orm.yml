@@ -1,9 +1,9 @@
 GBProd\ICantDecide\CoreDomain\Question\Question:
     type: entity
     table: question
-    id:
+    embedded:
         id:
-            type: QuestionIdentifier
+            class: GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier
     fields:
         text:
             type: text

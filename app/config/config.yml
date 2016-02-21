@@ -59,7 +59,13 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
-        
+        mappings:
+           QuestionDomain:
+              type: yml
+              prefix: GBProd\ICantDecide\CoreDomain\Question
+              dir: %kernel.root_dir%/../src/GBProd/ICantDecide/Infrastructure/Resources/config/doctrine
+              is_bundle: false
+              
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

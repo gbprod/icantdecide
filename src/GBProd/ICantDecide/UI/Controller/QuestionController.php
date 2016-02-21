@@ -5,6 +5,7 @@ namespace GBProd\ICantDecide\UI\Controller;
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
 use League\Tactician\CommandBus;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -20,10 +21,18 @@ class QuestionController extends Controller
     private $commandBus;
 
     /**
+     * @var EngineInterface
+     */
+    private $templating;
+
+    /**
      * @param CommandBus $commandBus
      */
-    public function __construct(CommandBus $commandBus)
-    {
+    public function __construct(
+        CommandBus $commandBus, 
+        EngineInterface $templating
+    ) {
+        $this->templating = $templating;
         $this->commandBus = $commandBus;
     }
     
@@ -37,8 +46,8 @@ class QuestionController extends Controller
         $query = new AvailableQuestionsQuery();
         $result = $this->commandBus->handle($query);
         
-        return $this->render(
-            'UI:Question:index.html.twig',
+        return $this->templating->renderResponse(
+            'UIBundle:Question:index.html.twig',
             array(
                 'questions' => $result,
             )
