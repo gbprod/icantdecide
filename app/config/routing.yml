@@ -1,0 +1,3 @@
+ui:
+    resource: "@UIBundle/Resources/config/routing.yml"
+    type: yaml

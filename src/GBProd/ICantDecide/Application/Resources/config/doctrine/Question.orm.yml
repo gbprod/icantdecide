@@ -1,0 +1,9 @@
+GBProd\ICantDecide\CoreDomain\Question\Question:
+    type: entity
+    table: question
+    id:
+        id:
+            type: QuestionIdentifier
+    fields:
+        text:
+            type: text

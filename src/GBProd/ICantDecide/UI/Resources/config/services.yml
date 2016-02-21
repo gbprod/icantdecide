@@ -1,0 +1,6 @@
+services:
+    icantdecide.question_controller:
+        class: GBProd\ICantDecide\UI\Controller\QuestionController
+        arguments:
+            - '@tactician.commandbus'
+        

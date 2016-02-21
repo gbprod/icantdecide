@@ -1,0 +1,3 @@
+question_index:
+    path: /
+    defaults:  { _controller: icantdecide.question_controller:index }

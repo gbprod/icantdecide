@@ -1,9 +1,10 @@
- <?php
+<?php
 
 namespace GBProd\ICantDecide\Infrastructure\Question;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use GBProd\ICantDecide\CoreDomain\Question\Question;
+use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
 
 /**
@@ -45,5 +46,17 @@ class DoctrineQuestionRepository implements QuestionRepository
     {
         $this->em->persist($question);
         $this->em->flush();
+    }
+    
+    /**
+     * {inheritdoc}
+     */
+    public function findAll()
+    {
+        return $this
+            ->em
+            ->getRepository('GBProd\ICantDecide\CoreDomain\Question\Question')
+            ->findAll()
+        ;
     }
 }

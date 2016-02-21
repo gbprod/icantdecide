@@ -1,5 +1,15 @@
 services:
-    icantdecide.question_repository:
+    icantdecide_app.question_repository:
         class: GBProd\ICantDecide\Infrastructure\Question\DoctrineQuestionRepository
         arguments:
             - "@doctrine.orm.entity_manager"
+        
+    
+    icantdecide_app.available_question_handler:
+        class: GBProd\ICantDecide\Application\Handler\AvailableQuestionsHandler
+        arguments:
+            - "@icantdecide_app.question_repository"
+        tags:
+            -  
+                name: tactician.handler
+                command: GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery
