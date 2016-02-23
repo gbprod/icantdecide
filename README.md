@@ -1,3 +1,9 @@
 # I can't decide
 
-  * [Core domain](src/GBProd/ICantDecide/CoreDomain/README.md)
+ * [ ] Specification on questions
+ * [ ] Ask new question
+ * [ ] Add Options to a question
+ * [ ] Vote for a option
+ * [ ] Commands
+ * [ ] WebUI
+

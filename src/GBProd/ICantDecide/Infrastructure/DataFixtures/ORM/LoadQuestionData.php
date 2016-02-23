@@ -7,6 +7,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use GBProd\ICantDecide\CoreDomain\Question\Question;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 
+/**
+ * Fixtures for questions
+ * 
+ * @author gbprod <contact@gb-prod.fr>
+ */
 class LoadQuestionData implements FixtureInterface
 {
     public function load(ObjectManager $manager)

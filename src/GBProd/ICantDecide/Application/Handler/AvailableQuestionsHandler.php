@@ -4,7 +4,6 @@ namespace GBProd\ICantDecide\Application\Handler;
 
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
-
 /**
  * Handler for available questions
  * 
