@@ -1,0 +1,4 @@
+GBProd\ICantDecide\Application\Command\AskQuestionCommand:
+    properties:
+        text:
+            - NotBlank: ~

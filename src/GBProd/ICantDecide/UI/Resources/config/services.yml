@@ -4,3 +4,4 @@ services:
         arguments:
             - '@tactician.commandbus'
             - '@templating'
+            - '@form.factory'

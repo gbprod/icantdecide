@@ -1,9 +1,11 @@
 # I can't decide
 
- * [ ] Specification on questions
  * [ ] Ask new question
+ * [ ] Specification on questions
  * [ ] Add Options to a question
  * [ ] Vote for a option
  * [ ] Commands
  * [ ] WebUI
+ * [ ] Unit tests :/
+ * [ ] Behat
 

@@ -2,11 +2,16 @@
 
 namespace GBProd\ICantDecide\UI\Controller;
 
+use GBProd\ICantDecide\Application\Command\AskQuestionCommand;
+use GBProd\ICantDecide\Application\Handler\AskQuestionHandler;
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
+use GBProd\ICantDecide\UI\Form\AskQuestionType;
 use League\Tactician\CommandBus;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Controller for Questions
@@ -28,12 +33,14 @@ class QuestionController extends Controller
     /**
      * @param CommandBus $commandBus
      */
-    public function __construct(
-        CommandBus $commandBus, 
-        EngineInterface $templating
-    ) {
-        $this->templating = $templating;
-        $this->commandBus = $commandBus;
+    public function __construct( 
+        CommandBus $commandBus,
+        EngineInterface $templating,
+        FormFactory $formFactory
+    )  {
+        $this->templating  = $templating;
+        $this->commandBus  = $commandBus;
+        $this->formFactory = $formFactory;
     }
     
     /**
@@ -50,6 +57,36 @@ class QuestionController extends Controller
             'UIBundle:Question:index.html.twig',
             array(
                 'questions' => $result,
+            )
+        );
+    }
+    
+    /**
+     * Question index action
+     * 
+     * @return Response
+     */
+    public function ask(Request $request)
+    {
+        $command = new AskQuestionCommand();
+
+        $form = $this->formFactory->create(
+            AskQuestionType::class, 
+            $command
+        );
+        
+        $form->handleRequest($request);
+    
+        if ($form->isValid()) {
+            # Use command bus !
+            $question = (new AskQuestionHandler())->handle($command);
+            dump($question); exit;
+        }
+    
+        return $this->templating->renderResponse(
+            'UIBundle:Question:ask.html.twig',
+            array(
+                'form' => $form->createView(),
             )
         );
     }
