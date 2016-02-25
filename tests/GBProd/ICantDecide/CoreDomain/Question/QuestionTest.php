@@ -14,14 +14,13 @@ class QuestionTest extends \PHPUnit_Framework_TestCase
 {
     public function testAsk()
     {
-        $question = Question::ask(
-            QuestionIdentifier::create('id'),
-            'Question ?'
-        );
+        $id = QuestionIdentifier::generate();
+
+        $question = Question::ask($id, 'Question ?');
 
         $this->assertEquals(
-            'id',
-            $question->getId()->getValue()
+            $id,
+            $question->getId()
         );
 
         $this->assertEquals(

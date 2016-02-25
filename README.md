@@ -8,4 +8,5 @@
  * [ ] WebUI
  * [ ] Unit tests :/
  * [ ] Behat
-
+ * [ ] Agnostic responses
+ * [ ] Factory for questions
