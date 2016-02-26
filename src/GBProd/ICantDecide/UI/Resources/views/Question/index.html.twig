@@ -1,5 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
 {% for question in questions %}
 <p>{{ question.text }}</p>
 {% endfor %}
 
 <a href="{{ path('question_ask') }}">ask a question</a>
+{% endblock %}

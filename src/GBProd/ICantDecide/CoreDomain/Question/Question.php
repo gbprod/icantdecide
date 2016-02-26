@@ -22,11 +22,6 @@ final class Question
     private $text;
 
     /**
-     * @var AnswerCollection
-     */
-    private $options;
-
-    /**
      * Ask a question
      *
      * @param string $text
@@ -34,19 +29,18 @@ final class Question
      *
      * @return Question
      */
-    public static function ask(QuestionIdentifier $id, $text/*, array $options*/)
+    public static function ask(QuestionIdentifier $id, $text)
     {
-        return new self($id, $text/*, $options*/);
+        return new self($id, $text);
     }
 
     /**
      * @param string $text
      */
-    private function __construct($id, $text/*, array $options*/)
+    private function __construct($id, $text)
     {
         $this->id   = $id;
         $this->text = $text;
-        // $this->options = $options;
     }
 
     /**
@@ -67,15 +61,5 @@ final class Question
     public function getText()
     {
         return $this->text;
-    }
-
-    /**
-     * Options for question
-     *
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->options;
     }
 }

@@ -5,3 +5,19 @@ services:
             - '@tactician.commandbus'
             - '@templating'
             - '@form.factory'
+            - '@router'
+            - '@session'
+
+    icantdecide.ask_question_command:
+        class: GBProd\ICantDecide\UI\Command\AskQuestionCommand
+        arguments:
+            - '@tactician.commandbus'
+        tags:
+            - { name: console.command }
+
+    icantdecide.available_questions_command:
+        class: GBProd\ICantDecide\UI\Command\AvailableQuestionsCommand
+        arguments:
+            - '@tactician.commandbus'
+        tags:
+            - { name: console.command }

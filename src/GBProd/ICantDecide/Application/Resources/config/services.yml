@@ -14,10 +14,10 @@ services:
                 command: GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery
 
     icantdecide_app.ask_question_handler:
-        class: GBProd\ICantDecide\Application\Handler\AskQuestionsHandler
+        class: GBProd\ICantDecide\Application\Handler\AskQuestionHandler
         arguments:
             - "@icantdecide_app.question_repository"
         tags:
             -
                 name: tactician.handler
-                command: GBProd\ICantDecide\Application\Query\AskQuestionCommand
+                command: GBProd\ICantDecide\Application\Command\AskQuestionCommand

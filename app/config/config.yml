@@ -41,10 +41,11 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   pdo_mysql
+        driver:   pdo_sqlite
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"
+        path:     "%database_path%"
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
@@ -61,7 +62,7 @@ doctrine:
               prefix: GBProd\ICantDecide\CoreDomain\Question
               dir: %kernel.root_dir%/../src/GBProd/ICantDecide/Infrastructure/Resources/config/doctrine
               is_bundle: false
-              
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
