@@ -22,6 +22,11 @@ final class Question
     private $text;
 
     /**
+     * @var \DateTime
+     */
+    private $endDate;
+
+    /**
      * Ask a question
      *
      * @param string $text
@@ -29,18 +34,19 @@ final class Question
      *
      * @return Question
      */
-    public static function ask(QuestionIdentifier $id, $text)
+    public static function ask(QuestionIdentifier $id, $text, \DateTime $endDate)
     {
-        return new self($id, $text);
+        return new self($id, $text, $endDate);
     }
 
     /**
      * @param string $text
      */
-    private function __construct($id, $text)
+    private function __construct(QuestionIdentifier $id, $text, \DateTime $endDate)
     {
-        $this->id   = $id;
-        $this->text = $text;
+        $this->id      = $id;
+        $this->text    = $text;
+        $this->endDate = $endDate;
     }
 
     /**
@@ -61,5 +67,15 @@ final class Question
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Question text
+     *
+     * @return string
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
     }
 }
