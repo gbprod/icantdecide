@@ -3,7 +3,7 @@
 namespace GBProd\ICantDecide\Application\Handler;
 
 use GBProd\ICantDecide\Application\Command\AskQuestionCommand;
-use GBProd\ICantDecide\CoreDomain\Question\Question;
+use GBProd\ICantDecide\CoreDomain\Question\QuestionFactory;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
 
@@ -20,11 +20,17 @@ class AskQuestionHandler
     private $repository;
 
     /**
+     * @var QuestionFactory
+     */
+    private $factory;
+
+    /**
      * @param QuestionRepository
      */
-    public function __construct(QuestionRepository $repository)
+    public function __construct(QuestionRepository $repository, QuestionFactory $factory)
     {
        $this->repository = $repository;
+       $this->factory    = $factory;
     }
 
     /**
@@ -34,9 +40,9 @@ class AskQuestionHandler
      */
     public function handle(AskQuestionCommand $command)
     {
-        $question = Question::ask(
-            QuestionIdentifier::generate(),
-            $command->text
+        $question = $this->factory->ask(
+            $command->text,
+            new \DateTimeImmutable('+1 day')
         );
 
         $this->repository->save($question);

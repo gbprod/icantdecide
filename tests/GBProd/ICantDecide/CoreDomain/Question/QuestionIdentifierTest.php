@@ -1,6 +1,8 @@
 <?php
 
-namespace GBProd\ICantDecide\CoreDomain\Question;
+namespace Tests\GBProd\ICantDecide\CoreDomain\Question;
+
+use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 
 /**
  * Test for QuestionIdentifier

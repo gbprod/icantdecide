@@ -5,6 +5,7 @@ namespace GBProd\ICantDecide\Application\Handler;
 use GBProd\ICantDecide\Application\Command\AskQuestionCommand;
 use GBProd\ICantDecide\Application\Handler\AskQuestionHandler;
 use GBProd\ICantDecide\CoreDomain\Question\Question;
+use GBProd\ICantDecide\CoreDomain\Question\QuestionFactory;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 
 /**
@@ -22,7 +23,8 @@ class AskQuestionHandlerTest extends \PHPUnit_Framework_TestCase
         $command->text = $questionText;
 
         $handler = new AskQuestionHandler(
-            $this->createRepositoryExpectsSave($questionText)
+            $this->createRepositoryExpectsSave($questionText),
+            new QuestionFactory()
         );
 
         $question = $handler->handle($command);

@@ -1,4 +1,7 @@
 services:
+    icantdecide_app.question_factory:
+        class: GBProd\ICantDecide\CoreDomain\Question\QuestionFactory
+        
     icantdecide_app.question_repository:
         class: GBProd\ICantDecide\Infrastructure\Question\DoctrineQuestionRepository
         arguments:
@@ -17,6 +20,7 @@ services:
         class: GBProd\ICantDecide\Application\Handler\AskQuestionHandler
         arguments:
             - "@icantdecide_app.question_repository"
+            - "@icantdecide_app.question_factory"
         tags:
             -
                 name: tactician.handler

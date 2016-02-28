@@ -30,12 +30,21 @@ class AvailableQuestionsHandlerTest extends \PHPUnit_Framework_TestCase
     private function createQuestions()
     {
         return array(
-            Question::ask(QuestionIdentifier::generate(), 'Question 1'),
-            Question::ask(QuestionIdentifier::generate(), 'Question 2'),
-            Question::ask(QuestionIdentifier::generate(), 'Question 3')
+            $this->createQuestion('Question 1'),
+            $this->createQuestion('Question 2'),
+            $this->createQuestion('Question 3'),
         );
     }
-
+    
+    private function createQuestion($text)
+    {
+        return Question::ask(
+            QuestionIdentifier::generate(), 
+            $text,
+            new \DateTimeImmutable('+1 day')
+        );
+    }
+    
     private function createRepositoryWillFindAll($questions)
     {
         $repository = $this->getMock(

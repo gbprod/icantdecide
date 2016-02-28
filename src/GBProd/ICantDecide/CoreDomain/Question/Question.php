@@ -22,7 +22,7 @@ final class Question
     private $text;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeImmutable
      */
     private $endDate;
 
@@ -34,7 +34,7 @@ final class Question
      *
      * @return Question
      */
-    public static function ask(QuestionIdentifier $id, $text, \DateTime $endDate)
+    public static function ask(QuestionIdentifier $id, $text, \DateTimeImmutable $endDate)
     {
         return new self($id, $text, $endDate);
     }
@@ -42,7 +42,7 @@ final class Question
     /**
      * @param string $text
      */
-    private function __construct(QuestionIdentifier $id, $text, \DateTime $endDate)
+    private function __construct(QuestionIdentifier $id, $text, \DateTimeImmutable $endDate)
     {
         $this->id      = $id;
         $this->text    = $text;
