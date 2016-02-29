@@ -1,5 +1,8 @@
 # I can't decide
 
+[![Build Status](https://travis-ci.org/gbprod/icantdecide.svg?branch=master)](https://travis-ci.org/gbprod/icantdecide)
+[![Coverage Status](https://coveralls.io/repos/github/gbprod/icantdecide/badge.svg?branch=master)](https://coveralls.io/github/gbprod/icantdecide?branch=master)
+
  * [ ] Ask new question
     * [x] Commands
     * [x] WebUI
@@ -16,3 +19,4 @@
  * [ ] i18n
  * [ ] Refactor controller (too fat)
  * [ ] Make web ui pretty
+ * [ ] travis & coverall ?
