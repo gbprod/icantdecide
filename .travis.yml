@@ -6,5 +6,11 @@ php:
 before_script:
     - composer self-update
     - composer install --no-interaction --prefer-source --dev
+    - mkdir -p build/logs
 
-script: vendor/bin/phpunit
+script: 
+    - vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml
+    
+after_success:
+    - travis_retry php vendor/bin/coveralls -v
+  
