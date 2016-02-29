@@ -21,6 +21,7 @@ class AskQuestionHandlerTest extends \PHPUnit_Framework_TestCase
 
         $command = new AskQuestionCommand();
         $command->text = $questionText;
+        $command->endDate = new \DateTime('+1 day');
 
         $handler = new AskQuestionHandler(
             $this->createRepositoryExpectsSave($questionText),
@@ -55,5 +56,25 @@ class AskQuestionHandlerTest extends \PHPUnit_Framework_TestCase
         ;
 
         return $repository;
+    }
+    
+    
+    public function testHandleChangeDateTimeToImmutable()
+    {
+        $questionText = 'Question ?';
+
+        $command = new AskQuestionCommand();
+        $command->text = $questionText;
+        $command->endDate = new \DateTime('+1 day');
+
+        $handler = new AskQuestionHandler(
+            $this->createRepositoryExpectsSave($questionText),
+            new QuestionFactory()
+        );
+
+        $question = $handler->handle($command);
+
+        $this->assertInstanceOf('\DateTimeImmutable', $question->getEndDate());
+        $this->assertEquals($command->endDate, $question->getEndDate());
     }
 }
