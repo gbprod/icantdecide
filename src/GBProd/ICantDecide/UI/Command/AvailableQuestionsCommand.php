@@ -47,6 +47,8 @@ class AvailableQuestionsCommand extends Command
         $questions = $this->commandBus->handle($query);
 
         foreach ($questions as $question) {
+            
+            var_dump($question);
             $output->writeln($question->getText());
         }
     }

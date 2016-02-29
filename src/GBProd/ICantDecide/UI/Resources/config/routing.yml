@@ -1,7 +1,7 @@
 question_index:
     path: /
-    defaults:  { _controller: icantdecide.question_controller:index }
+    defaults:  { _controller: icantdecide.question.index_controller:index }
     
 question_ask:
     path: /ask
-    defaults:  { _controller: icantdecide.question_controller:ask }
+    defaults:  { _controller: icantdecide.question.ask_controller:ask }

@@ -7,3 +7,5 @@ GBProd\ICantDecide\CoreDomain\Question\Question:
     fields:
         text:
             type: text
+        endDate:
+            type: datetime

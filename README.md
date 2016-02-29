@@ -2,12 +2,13 @@
 
 [![Build Status](https://travis-ci.org/gbprod/icantdecide.svg?branch=master)](https://travis-ci.org/gbprod/icantdecide)
 [![Coverage Status](https://coveralls.io/repos/github/gbprod/icantdecide/badge.svg?branch=master)](https://coveralls.io/github/gbprod/icantdecide?branch=master)
+[![Code Climate](https://codeclimate.com/github/gbprod/icantdecide/badges/gpa.svg)](https://codeclimate.com/github/gbprod/icantdecide)
 
  * [ ] Ask new question
-    * [x] Commands
-    * [x] WebUI
- * [ ] End date 
+    * [ ] Domain events
+ * [x] End date 
  * [ ] Specification on questions
+
  * [ ] Add Options to a question
  * [ ] Vote for a option
  * [ ] Unit tests :/
@@ -19,4 +20,3 @@
  * [ ] i18n
  * [ ] Refactor controller (too fat)
  * [ ] Make web ui pretty
- * [ ] travis & coverall ?

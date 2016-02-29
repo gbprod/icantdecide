@@ -1,10 +1,10 @@
 <?php
 
-namespace GBProd\ICantDecide\UI\Form;
+namespace GBProd\ICantDecide\Application\Form;
 
 use GBProd\ICantDecide\Application\Command\AskQuestionCommand;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type as Type;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,7 +21,10 @@ class AskQuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('text', TextareaType::class)
+            ->add('text', Type\TextareaType::class)
+            ->add('endDate', Type\DateTimeType::class, [
+                'data' => new \DateTimeImmutable('+1 day')
+            ])
         ;
     }
     

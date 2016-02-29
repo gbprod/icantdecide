@@ -1,12 +1,18 @@
 services:
-    icantdecide.question_controller:
-        class: GBProd\ICantDecide\UI\Controller\QuestionController
+    icantdecide.question.ask_controller:
+        class: GBProd\ICantDecide\UI\Controller\Question\AskController
         arguments:
             - '@tactician.commandbus'
             - '@templating'
             - '@form.factory'
             - '@router'
             - '@session'
+            
+    icantdecide.question.index_controller:
+        class: GBProd\ICantDecide\UI\Controller\Question\IndexController
+        arguments:
+            - '@tactician.commandbus'
+            - '@templating'
 
     icantdecide.ask_question_command:
         class: GBProd\ICantDecide\UI\Command\AskQuestionCommand

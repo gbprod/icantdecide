@@ -13,4 +13,9 @@ class AskQuestionCommand
      * @var string
      */
     public $text;
+    
+    /**
+     * \DateTimeImmutable
+     */
+    public $endDate;
 }

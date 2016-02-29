@@ -2,7 +2,10 @@
 
 {% block body %}
 {% for question in questions %}
-<p>{{ question.text }}</p>
+<div>
+    <p>{{ question.text }}</p>
+    <p>{{ question.endDate|date('Y-m-d H:i:s') }}</p>
+</div>
 {% endfor %}
 
 <a href="{{ path('question_ask') }}">ask a question</a>

@@ -2,3 +2,7 @@ GBProd\ICantDecide\Application\Command\AskQuestionCommand:
     properties:
         text:
             - NotBlank: ~
+        endDate:
+            - NotBlank: ~
+            - GreaterThan: now
+            - DateTime: ~

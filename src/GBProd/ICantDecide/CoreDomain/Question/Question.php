@@ -36,6 +36,14 @@ final class Question
      */
     public static function ask(QuestionIdentifier $id, $text, \DateTimeImmutable $endDate)
     {
+        if (empty($text)) {
+            throw new \InvalidArgumentException("The text should not be blank.");
+        }
+        
+        if ($endDate < new \DateTimeImmutable('now')) {
+            throw new \InvalidArgumentException("The end date should be in the future.");
+        }
+    
         return new self($id, $text, $endDate);
     }
 

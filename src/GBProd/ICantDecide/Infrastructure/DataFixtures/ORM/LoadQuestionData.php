@@ -18,7 +18,8 @@ class LoadQuestionData implements FixtureInterface
     {
         $question = Question::ask(
             QuestionIdentifier::generate(),
-            'What the answer to life the universe and everything ?'
+            'What the answer to life the universe and everything ?',
+            new \DateTimeImmutable('+1 day')
         );
         
         $manager->persist($question);

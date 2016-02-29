@@ -23,4 +23,24 @@ class QuestionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Question ?', $question->getText());
         $this->assertEquals($endDate, $question->getEndDate());
     }
+    
+    public function testThrowsExceptionIfTextEmpty()
+    {
+        $id = QuestionIdentifier::generate();
+        $endDate = new \DateTimeImmutable('+1 day');
+
+        $this->setExpectedException('\InvalidArgumentException');
+    
+        $question = Question::ask($id, '', $endDate);
+    }
+    
+    public function testThrowsExceptionIfNotInTheFuture()
+    {
+        $id = QuestionIdentifier::generate();
+        $endDate = new \DateTimeImmutable('-1 day');
+
+        $this->setExpectedException('\InvalidArgumentException');
+    
+        $question = Question::ask($id, 'Question ?', $endDate);
+    }
 }
