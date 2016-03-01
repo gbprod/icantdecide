@@ -4,6 +4,8 @@ namespace GBProd\ICantDecide\Application\Handler;
 
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
+use GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable;
+
 /**
  * Handler for available questions
  * 
@@ -31,6 +33,8 @@ class AvailableQuestionsHandler
      */
     public function handle(AvailableQuestionsQuery $query)
     {
-        return $this->repository->findAll();
+        return $this->repository->findSatisfying(
+            new IsAvailable()
+        );
     }
 }

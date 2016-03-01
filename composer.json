@@ -24,7 +24,8 @@
         "league/tactician-bundle": "^0.4.0",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "ramsey/uuid": "^3.2",
-        "ramsey/uuid-doctrine": "^1.1"
+        "ramsey/uuid-doctrine": "^1.1",
+        "kphoen/rulerz-bundle": "^0.12.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

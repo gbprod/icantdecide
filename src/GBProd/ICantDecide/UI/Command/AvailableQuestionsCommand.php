@@ -47,9 +47,7 @@ class AvailableQuestionsCommand extends Command
         $questions = $this->commandBus->handle($query);
 
         foreach ($questions as $question) {
-            
-            var_dump($question);
-            $output->writeln($question->getText());
+            $output->writeln($question->getText()." ".$question->getEndDate()->format('Y-m-d H:i:s'));
         }
     }
 }

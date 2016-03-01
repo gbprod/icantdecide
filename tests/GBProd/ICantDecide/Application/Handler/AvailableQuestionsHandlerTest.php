@@ -53,7 +53,8 @@ class AvailableQuestionsHandlerTest extends \PHPUnit_Framework_TestCase
 
         $repository
             ->expects($this->any())
-            ->method('findAll')
+            ->method('findSatisfying')
+            ->with($this->isInstanceOf('GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable'))
             ->willReturn($questions)
         ;
 

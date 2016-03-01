@@ -6,6 +6,7 @@ services:
         class: GBProd\ICantDecide\Infrastructure\Question\DoctrineQuestionRepository
         arguments:
             - "@doctrine.orm.entity_manager"
+            - "@rulerz"
 
     icantdecide_app.available_question_handler:
         class: GBProd\ICantDecide\Application\Handler\AvailableQuestionsHandler

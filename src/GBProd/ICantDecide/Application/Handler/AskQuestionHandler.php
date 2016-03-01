@@ -42,7 +42,7 @@ class AskQuestionHandler
     {
         $question = $this->factory->ask(
             $command->text,
-            new \DateTimeImmutable($command->endDate->format('c'))
+            \DateTimeImmutable::createFromMutable($command->endDate)
         );
 
         $this->repository->save($question);

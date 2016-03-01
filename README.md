@@ -16,7 +16,9 @@
  * [ ] Agnostic responses
     * [ ] Rest API json
     * [ ] Rest API xml
- * [ ] Factory for questions
+ * [x] Factory for questions
  * [ ] i18n
  * [ ] Refactor controller (too fat)
  * [ ] Make web ui pretty
+ * [ ] Use ES for the front
+ * [ ] Event sourcing for ES

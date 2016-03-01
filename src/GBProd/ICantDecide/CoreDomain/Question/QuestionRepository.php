@@ -4,6 +4,7 @@ namespace GBProd\ICantDecide\CoreDomain\Question;
 
 use GBProd\ICantDecide\CoreDomain\Question\Question;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
+use RulerZ\Spec\Specification;
 
 /**
  * Interface for question repository
@@ -36,4 +37,11 @@ interface QuestionRepository
      * @return array<QuestionInterface>
      */
     public function findAll();
+    
+    /**
+     * Find questions satisfying specifications
+     *
+     * @return array<QuestionInterface>
+     */
+    public function findSatisfying();
 }
