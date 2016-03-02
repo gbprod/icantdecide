@@ -4,11 +4,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/gbprod/icantdecide/badge.svg?branch=master)](https://coveralls.io/github/gbprod/icantdecide?branch=master)
 [![Code Climate](https://codeclimate.com/github/gbprod/icantdecide/badges/gpa.svg)](https://codeclimate.com/github/gbprod/icantdecide)
 
+ * [ ] Use rulerz or not ? Or just use it in Application layer ?
  * [ ] Ask new question
     * [ ] Domain events
  * [x] End date 
  * [ ] Specification on questions
-
  * [ ] Add Options to a question
  * [ ] Vote for a option
  * [ ] Unit tests :/
@@ -22,3 +22,4 @@
  * [ ] Make web ui pretty
  * [ ] Use ES for the front
  * [ ] Event sourcing for ES
+ * [ ] Write doc

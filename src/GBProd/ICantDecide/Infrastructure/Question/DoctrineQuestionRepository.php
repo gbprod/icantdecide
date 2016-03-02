@@ -6,8 +6,6 @@ use Doctrine\Common\Persistence\ObjectManager;
 use GBProd\ICantDecide\CoreDomain\Question\Question;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
-use RulerZ\Spec\Specification;
-use RulerZ\RulerZ;
 
 /**
  * Question doctrine repository
@@ -22,17 +20,11 @@ class DoctrineQuestionRepository implements QuestionRepository
     private $em;
 
     /**
-     * @var RulerZ
-     */
-    private $rulerz;
-
-    /**
      * @param EntityManager $em
      */
-    public function __construct(ObjectManager $em, RulerZ $rulerz)
+    public function __construct(ObjectManager $em)
     {
-        $this->em     = $em;
-        $this->rulerz = $rulerz;
+        $this->em = $em;
     }
 
     /**
@@ -71,14 +63,14 @@ class DoctrineQuestionRepository implements QuestionRepository
     /**
      * {inheritdoc}
      */
-    public function findSatisfying(Specification $specification)
+    public function findSatisfying($specification)
     {
-        $qb = $this->em
-            ->createQueryBuilder()
-            ->select('q')
-            ->from('GBProd\ICantDecide\CoreDomain\Question\Question', 'q')
-        ;
+        // $qb = $this->em
+        //     ->createQueryBuilder()
+        //     ->select('q')
+        //     ->from('GBProd\ICantDecide\CoreDomain\Question\Question', 'q')
+        // ;
             
-        return $this->rulerz->filterSpec($qb, $specification);
+        return $this->findAll();
     }
 }
