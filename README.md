@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/gbprod/icantdecide.svg?branch=master)](https://travis-ci.org/gbprod/icantdecide)
 [![Coverage Status](https://coveralls.io/repos/github/gbprod/icantdecide/badge.svg?branch=master)](https://coveralls.io/github/gbprod/icantdecide?branch=master)
 [![Code Climate](https://codeclimate.com/github/gbprod/icantdecide/badges/gpa.svg)](https://codeclimate.com/github/gbprod/icantdecide)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gbprod/icantdecide/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gbprod/icantdecide/?branch=master)
 
  * [ ] Use rulerz or not ? Or just use it in Application layer ?
  * [ ] Ask new question
