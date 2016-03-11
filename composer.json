@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "gbprod/icantdecide",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "I can't decide",
     "autoload": {
         "psr-4": { "": "src/" },
         "files": [ "app/AppKernel.php" ]
@@ -24,13 +24,14 @@
         "league/tactician-bundle": "^0.4.0",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "ramsey/uuid": "^3.2",
-        "ramsey/uuid-doctrine": "^1.1"
+        "ramsey/uuid-doctrine": "^1.1",
+        "gbprod/doctrine-specification-bundle": "v0.0.*@alpha",
+        "gbprod/domain-event-bundle": "^0.1.0@alpha"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^2.7",
-        "phpunit/phpunit": "^4.8",
-        "satooshi/php-coveralls": "^1.0"
+        "phpunit/phpunit": "^4.8"
     },
     "scripts": {
         "post-install-cmd": [
@@ -63,5 +64,6 @@
         "branch-alias": {
             "dev-master": "3.0-dev"
         }
-    }
+    },
+    "minimum-stability": "alpha"
 }

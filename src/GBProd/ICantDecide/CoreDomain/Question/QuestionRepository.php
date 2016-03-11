@@ -4,6 +4,7 @@ namespace GBProd\ICantDecide\CoreDomain\Question;
 
 use GBProd\ICantDecide\CoreDomain\Question\Question;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
+use GBProd\Specification\Specification;
 
 /**
  * Interface for question repository
@@ -44,5 +45,5 @@ interface QuestionRepository
      * 
      * @return array<QuestionInterface>
      */
-    public function findSatisfying($specification);
+    public function findSatisfying(Specification $specification);
 }

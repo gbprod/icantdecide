@@ -1,11 +1,13 @@
 services:
     icantdecide_app.question_factory:
         class: GBProd\ICantDecide\CoreDomain\Question\QuestionFactory
-        
+
     icantdecide_app.question_repository:
         class: GBProd\ICantDecide\Infrastructure\Question\DoctrineQuestionRepository
         arguments:
             - "@doctrine.orm.entity_manager"
+            - "@gbprod.doctrine_specification_handler"
+            - "@gbprod.domain_event_dispatcher"
 
     icantdecide_app.available_question_handler:
         class: GBProd\ICantDecide\Application\Handler\AvailableQuestionsHandler
@@ -25,3 +27,10 @@ services:
             -
                 name: tactician.handler
                 command: GBProd\ICantDecide\Application\Command\AskQuestionCommand
+
+    icantdecide_app.question.expr_builder.is_available:
+        class: GBProd\ICantDecide\Infrastructure\Question\ExpressionBuilder\IsAvailableBuilder
+        tags:
+            -
+                name: doctrine.expression_builder
+                specification: GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable

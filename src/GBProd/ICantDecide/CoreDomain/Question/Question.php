@@ -2,15 +2,20 @@
 
 namespace GBProd\ICantDecide\CoreDomain\Question;
 
+use GBProd\DomainEvent\EventProvider;
+use GBProd\DomainEvent\EventProviderTrait;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
+use GBProd\ICantDecide\CoreDomain\Event\Question\QuestionAsked;
 
 /**
  * Question
  *
  * @author gbprod <contact@gb-prod.fr>
  */
-final class Question
+final class Question implements EventProvider
 {
+    use EventProviderTrait;
+
     /**
      * @var QuestionIdentifier
      */
@@ -39,12 +44,16 @@ final class Question
         if (empty($text)) {
             throw new \InvalidArgumentException("The text should not be blank.");
         }
-        
+
         if ($endDate < new \DateTimeImmutable('now')) {
             throw new \InvalidArgumentException("The end date should be in the future.");
         }
-    
-        return new self($id, $text, $endDate);
+
+        $question = new self($id, $text, $endDate);
+
+        $question->raise(new QuestionAsked($question));
+
+        return $question;
     }
 
     /**

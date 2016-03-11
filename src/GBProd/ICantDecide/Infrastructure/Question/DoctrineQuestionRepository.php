@@ -3,9 +3,12 @@
 namespace GBProd\ICantDecide\Infrastructure\Question;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use GBProd\DoctrineSpecification\Handler as SpecificationHandler;
+use GBProd\Specification\Specification;
 use GBProd\ICantDecide\CoreDomain\Question\Question;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
+use GBProd\DomainEvent\Dispatcher;
 
 /**
  * Question doctrine repository
@@ -20,11 +23,23 @@ class DoctrineQuestionRepository implements QuestionRepository
     private $em;
 
     /**
+     * @var SpecificationHandler
+     */
+    private $handler;
+
+    /**
+     * @var Dispatcher
+     */
+    private $dispatcher;
+
+    /**
      * @param EntityManager $em
      */
-    public function __construct(ObjectManager $em)
+    public function __construct(ObjectManager $em, SpecificationHandler $handler, Dispatcher $dispatcher)
     {
-        $this->em = $em;
+        $this->em         = $em;
+        $this->handler    = $handler;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -34,7 +49,7 @@ class DoctrineQuestionRepository implements QuestionRepository
     {
         return $this
             ->em
-            ->getRepository('GBProd\ICantDecide\CoreDomain\Question\Question')
+            ->getRepository(Question::class)
             ->find($id)
         ;
     }
@@ -46,8 +61,10 @@ class DoctrineQuestionRepository implements QuestionRepository
     {
         $this->em->persist($question);
         $this->em->flush();
+
+        $this->dispatcher->dispatch($question);
     }
-    
+
     /**
      * {inheritdoc}
      */
@@ -55,22 +72,22 @@ class DoctrineQuestionRepository implements QuestionRepository
     {
         return $this
             ->em
-            ->getRepository('GBProd\ICantDecide\CoreDomain\Question\Question')
+            ->getRepository(Question::class)
             ->findAll()
         ;
     }
-    
+
     /**
      * {inheritdoc}
      */
-    public function findSatisfying($specification)
+    public function findSatisfying(Specification $specification)
     {
-        // $qb = $this->em
-        //     ->createQueryBuilder()
-        //     ->select('q')
-        //     ->from('GBProd\ICantDecide\CoreDomain\Question\Question', 'q')
-        // ;
-            
-        return $this->findAll();
+        $qb = $this
+            ->em
+            ->getRepository(Question::class)
+            ->createQueryBuilder('q')
+        ;
+
+        return $this->handler->handle($specification, $qb);
     }
 }
