@@ -4,11 +4,16 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/gbprod/icantdecide/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/gbprod/icantdecide/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gbprod/icantdecide/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gbprod/icantdecide/?branch=master)
 
- * [ ] Use rulerz or not ? Or just use it in Application layer ?
- * [ ] Ask new question
-    * [ ] Domain events
- * [x] End date
- * [ ] Specification on questions
+Small and simple using my DDD stack :
+
+ * [Specification](https://github.com/gbprod/specification)
+ * [Doctrine Specification](https://github.com/gbprod/doctrine-specification)
+ * [Doctrine Specification Bundle](https://github.com/gbprod/doctrine-specification-bundle)
+ * [Domain event](https://github.com/gbprod/domain-event)
+ * [Domain event bundle](https://github.com/gbprod/domain-event-bundle)
+
+
+ * [ ] Read Model and Projector
  * [ ] Add Options to a question
  * [ ] Vote for a option
  * [ ] Unit tests :/
@@ -16,7 +21,6 @@
  * [ ] Agnostic responses
     * [ ] Rest API json
     * [ ] Rest API xml
- * [x] Factory for questions
  * [ ] i18n
  * [ ] Refactor controller (too fat)
  * [ ] Make web ui pretty

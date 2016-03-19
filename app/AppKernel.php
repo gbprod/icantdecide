@@ -16,6 +16,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new League\Tactician\Bundle\TacticianBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
             new GBProd\DoctrineSpecificationBundle\DoctrineSpecificationBundle(),
             new GBProd\DomainEventBundle\DomainEventBundle(),
             new GBProd\ICantDecide\Application\ApplicationBundle(),

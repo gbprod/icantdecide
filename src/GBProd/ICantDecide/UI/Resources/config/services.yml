@@ -7,7 +7,7 @@ services:
             - '@form.factory'
             - '@router'
             - '@session'
-            
+
     icantdecide.question.index_controller:
         class: GBProd\ICantDecide\UI\Controller\Question\IndexController
         arguments:

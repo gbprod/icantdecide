@@ -3,6 +3,7 @@
 {% block body %}
 {% for question in questions %}
 <div>
+    <p>{{ question.id }}</p>
     <p>{{ question.text }}</p>
     <p>{{ question.endDate|date('Y-m-d H:i:s') }}</p>
 </div>

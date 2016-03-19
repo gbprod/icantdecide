@@ -3,38 +3,36 @@
 namespace GBProd\ICantDecide\Application\Handler;
 
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
-use GBProd\ICantDecide\CoreDomain\Question\QuestionRepository;
+use GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\DataStore;
 use GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable;
 
 /**
  * Handler for available questions
- * 
+ *
  * @author gbprod <contact@gb-prod.fr>
  */
 class AvailableQuestionsHandler
 {
     /**
-     * @var QuestionRepository
+     * @var DataStore
      */
-    private $repository;
-    
+    private $dataStore;
+
     /**
-     * @param QuestionRepository
+     * @param DataStore
      */
-    public function __construct(QuestionRepository $repository)
+    public function __construct(DataStore $dataStore)
     {
-       $this->repository = $repository;
+       $this->dataStore = $dataStore;
     }
-    
+
     /**
      * Handle question query
-     * 
+     *
      * @return array<Question>
      */
     public function handle(AvailableQuestionsQuery $query)
     {
-        return $this->repository->findSatisfying(
-            new IsAvailable()
-        );
+        return $this->dataStore->findAll();
     }
 }
