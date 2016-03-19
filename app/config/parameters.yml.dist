@@ -16,5 +16,8 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
+    elasticsearch_host: localhost
+    elasticsearch_port: 9200
+
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
