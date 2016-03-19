@@ -73,7 +73,7 @@ swiftmailer:
 
 fos_elastica:
     clients:
-        default: { host: localhost, port: 9200 }
+        default: { host: %elasticsearch_host%, port: %elasticsearch_port% }
     indexes:
         app:
             types:
@@ -82,4 +82,3 @@ fos_elastica:
                         id: { type: string }
                         text: { type: string }
                         endDate: { type: date, format: "yyyy-MM-dd HH:mm:ss" }
-            
