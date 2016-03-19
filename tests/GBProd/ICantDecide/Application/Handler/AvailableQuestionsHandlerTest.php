@@ -6,6 +6,7 @@ use GBProd\ICantDecide\Application\Handler\AvailableQuestionsHandler;
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
 use GBProd\ICantDecide\CoreDomain\Question\Question;
 use GBProd\ICantDecide\CoreDomain\Question\QuestionIdentifier;
+use GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\QuestionView;
 
 /**
  * Tests for AvailableQuestionsHandler
@@ -16,8 +17,8 @@ class AvailableQuestionsHandlerTest extends \PHPUnit_Framework_TestCase
 {
     public function testHandleReturnsAllQuestions()
     {
-        $questions = $this->createQuestions();
-        $repository = $this->createRepositoryWillFindAll($questions);
+        $questions = $this->createQuestionsView();
+        $repository = $this->createDataStoreWillFindAll($questions);
 
         $handler = new AvailableQuestionsHandler($repository);
 
@@ -27,37 +28,38 @@ class AvailableQuestionsHandlerTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    private function createQuestions()
+    private function createQuestionsView()
     {
         return array(
-            $this->createQuestion('Question 1'),
-            $this->createQuestion('Question 2'),
-            $this->createQuestion('Question 3'),
+            $this->createQuestionView('Question 1'),
+            $this->createQuestionView('Question 2'),
+            $this->createQuestionView('Question 3'),
         );
     }
-    
-    private function createQuestion($text)
+
+    private function createQuestionView($text)
     {
-        return Question::ask(
-            QuestionIdentifier::generate(), 
-            $text,
-            new \DateTimeImmutable('+1 day')
+        return QuestionView::fromQuestion(
+            Question::ask(
+                QuestionIdentifier::generate(),
+                $text,
+                new \DateTimeImmutable('+1 day')
+            )
         );
     }
-    
-    private function createRepositoryWillFindAll($questions)
+
+    private function createDataStoreWillFindAll($questions)
     {
-        $repository = $this->getMock(
-            'GBProd\ICantDecide\CoreDomain\Question\QuestionRepository'
+        $datastore = $this->getMock(
+            'GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\DataStore'
         );
 
-        $repository
+        $datastore
             ->expects($this->any())
-            ->method('findSatisfying')
-            ->with($this->isInstanceOf('GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable'))
+            ->method('findAll')
             ->willReturn($questions)
         ;
 
-        return $repository;
+        return $datastore;
     }
 }

@@ -36,7 +36,7 @@ services:
                 specification: GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable
 
     icantdecide_app.question_view.data_store:
-        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\DataStore
+        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\ElasticaDataStore
         arguments:
             - "@fos_elastica.index.app.question_view"
             - "@serializer"
