@@ -71,14 +71,9 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-fos_elastica:
+m6web_elasticsearch:
+    default_client: views
     clients:
-        default: { host: %elasticsearch_host%, port: %elasticsearch_port% }
-    indexes:
-        app:
-            types:
-                question_view:
-                    mappings:
-                        id: { type: string }
-                        text: { type: string }
-                        endDate: { type: date, format: "yyyy-MM-dd HH:mm:ss" }
+        views:
+            hosts:
+                - '%elasticsearch_host%:%elasticsearch_port%'

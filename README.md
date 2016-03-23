@@ -27,3 +27,12 @@ Small and simple using my DDD stack :
  * [ ] Use ES for the front
  * [ ] Event sourcing for ES
  * [ ] Write doc
+ * 
+ 
+### Installation
+
+```bash
+composer update
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:create
+```

@@ -36,10 +36,10 @@ services:
                 specification: GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable
 
     icantdecide_app.question_view.data_store:
-        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\ElasticaDataStore
+        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\ElasticDataStore
         arguments:
-            - "@fos_elastica.index.app.question_view"
-            - "@serializer"
+            - "@m6web_elasticsearch.client.views"
+
 
     icantdecide_app.question_view.projector:
         class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\Projector

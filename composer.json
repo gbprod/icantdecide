@@ -1,4 +1,8 @@
-{
+{    
+    "repositories": [{
+        "type": "git",
+        "url": "https://github.com/gbprod/ElasticsearchBundle"
+    }],
     "name": "gbprod/icantdecide",
     "license": "MIT",
     "type": "project",
@@ -27,7 +31,7 @@
         "ramsey/uuid-doctrine": "^1.1",
         "gbprod/doctrine-specification-bundle": "^0.1",
         "gbprod/domain-event-bundle": "^0.1",
-        "friendsofsymfony/elastica-bundle": "dev-master",
+        "m6web/elasticsearch-bundle": "dev-master",
         "gbprod/uuid-normalizer": "^1.0"
     },
     "require-dev": {
