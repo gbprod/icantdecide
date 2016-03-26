@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        <title>{% block title %}I can't decide{% endblock %}</title>
+        {% stylesheets
+            '@UIBundle/Resources/public/less/ui.less'
+            filter='cssrewrite' 
+        %}
+            <link href="{{ asset_url }}" rel="stylesheet" media="screen">
+        {% endstylesheets %}
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="header clearfix">
+                <div class="pull-right">
+                    <a href="{{ path('question_ask') }}" class="btn btn-primary">Ask a question</a>
+                </div>
+                <h3 class="text-muted">I can't decide</h3>
+            </div>
+            {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
+
+            {% block body %}{% endblock %}
+        </div>
+        
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

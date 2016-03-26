@@ -77,9 +77,17 @@ m6web_elasticsearch:
         views:
             hosts:
                 - '%elasticsearch_host%:%elasticsearch_port%'
-                
+
 elasticsearch_extra:
     clients:
         views:
             indices:
                 question_view: ~
+
+assetic:
+    filters:
+        less:
+            node: %node%
+            node_paths: [%node_modules%]
+            apply_to: "\\.less$"
+        cssrewrite: ~

@@ -1,13 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'UIBundle::base.html.twig' %}
 
 {% block body %}
 {% for question in questions.hits.hits %}
 <div>
-    <p>{{ question._source.id }}</p>
-    <p>{{ question._source.text }}</p>
+    <h4>{{ question._source.text }}</h4>
     <p>{{ question._source.endDate|date('Y-m-d H:i:s') }}</p>
 </div>
 {% endfor %}
 
-<a href="{{ path('question_ask') }}">ask a question</a>
 {% endblock %}

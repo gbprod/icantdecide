@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new GBProd\ICantDecide\Application\ApplicationBundle(),
             new GBProd\ICantDecide\UI\UIBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

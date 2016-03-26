@@ -2,7 +2,18 @@
     "repositories": [{
         "type": "git",
         "url": "https://github.com/gbprod/ElasticsearchBundle"
-    }],
+    }, {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.11.1",
+                "dist": {
+                    "url": "https://code.jquery.com/jquery-1.11.1.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
     "name": "gbprod/icantdecide",
     "license": "MIT",
     "type": "project",
@@ -34,7 +45,10 @@
         "m6web/elasticsearch-bundle": "1.0.1",
         "gbprod/elasticsearch-extra-bundle": "^0.1",
         "gbprod/uuid-normalizer": "^1.0",
-        "symfony/assetic-bundle": "^2.8"
+        "symfony/assetic-bundle": "^2.8",
+        "braincrafted/bootstrap-bundle": "^2.2",
+        "twbs/bootstrap": "3.0.*",
+        "jquery/jquery":  "1.11.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -48,7 +62,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+            "Braincrafted\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::install"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -56,7 +71,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+            "Braincrafted\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::install"
         ]
     },
     "extra": {
