@@ -39,6 +39,9 @@ services:
         class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\ElasticDataStore
         arguments:
             - "@m6web_elasticsearch.client.views"
+            - "@serializer"
+            - "views"
+            - "question_view"
 
 
     icantdecide_app.question_view.projector:
@@ -47,11 +50,3 @@ services:
             - "@icantdecide_app.question_view.data_store"
         tags:
             - { name: kernel.event_listener, event: Question.QuestionAsked, method: 'onQuestionAsked' }
-
-    icantdecide_app.question_view.user:
-        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\Provider
-        arguments:
-            - "@icantdecide_app.question_view.data_store"
-            - "@icantdecide_app.question_repository"
-        tags:
-            - { name: fos_elastica.provider, index: app, type: question_view }

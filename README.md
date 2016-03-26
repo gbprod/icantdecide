@@ -35,4 +35,5 @@ Small and simple using my DDD stack :
 composer update
 php bin/console doctrine:database:create
 php bin/console doctrine:schema:create
+php bin/console elasticsearch:index:create views question_view
 ```

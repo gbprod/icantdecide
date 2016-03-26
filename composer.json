@@ -31,8 +31,10 @@
         "ramsey/uuid-doctrine": "^1.1",
         "gbprod/doctrine-specification-bundle": "^0.1",
         "gbprod/domain-event-bundle": "^0.1",
-        "m6web/elasticsearch-bundle": "dev-master",
-        "gbprod/uuid-normalizer": "^1.0"
+        "m6web/elasticsearch-bundle": "1.0.1",
+        "gbprod/elasticsearch-extra-bundle": "^0.1",
+        "gbprod/uuid-normalizer": "^1.0",
+        "symfony/assetic-bundle": "^2.8"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

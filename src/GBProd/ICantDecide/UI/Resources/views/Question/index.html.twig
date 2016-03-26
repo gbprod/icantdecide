@@ -1,11 +1,11 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-{% for question in questions %}
+{% for question in questions.hits.hits %}
 <div>
-    <p>{{ question.id }}</p>
-    <p>{{ question.text }}</p>
-    <p>{{ question.endDate|date('Y-m-d H:i:s') }}</p>
+    <p>{{ question._source.id }}</p>
+    <p>{{ question._source.text }}</p>
+    <p>{{ question._source.endDate|date('Y-m-d H:i:s') }}</p>
 </div>
 {% endfor %}
 

@@ -15,12 +15,14 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new League\Tactician\Bundle\TacticianBundle(),
             new M6Web\Bundle\ElasticsearchBundle\M6WebElasticsearchBundle(),
+            new GBProd\ElasticsearchExtraBundle\ElasticsearchExtraBundle(),
             new GBProd\DoctrineSpecificationBundle\DoctrineSpecificationBundle(),
             new GBProd\DomainEventBundle\DomainEventBundle(),
+            new League\Tactician\Bundle\TacticianBundle(),
             new GBProd\ICantDecide\Application\ApplicationBundle(),
             new GBProd\ICantDecide\UI\UIBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
