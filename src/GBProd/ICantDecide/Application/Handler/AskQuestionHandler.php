@@ -42,6 +42,7 @@ class AskQuestionHandler
     {
         $question = $this->factory->ask(
             $command->text,
+            $command->options,
             new \DateTimeImmutable($command->endDate->format('c'))
         );
 

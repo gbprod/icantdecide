@@ -1,0 +1,7 @@
+GBProd\ICantDecide\CoreDomain\Question\OptionIdentifier:
+    type: embeddable
+    id:
+        questionUuid:
+            type: uuid
+        position:
+            type: integer

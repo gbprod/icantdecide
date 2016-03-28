@@ -18,4 +18,9 @@ class AskQuestionCommand
      * \DateTimeImmutable
      */
     public $endDate;
+    
+    /**
+     * @var array<string>
+     */
+    public $options;
 }

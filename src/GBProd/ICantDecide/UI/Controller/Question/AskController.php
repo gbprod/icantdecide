@@ -3,8 +3,8 @@
 namespace GBProd\ICantDecide\UI\Controller\Question;
 
 use GBProd\ICantDecide\Application\Command\AskQuestionCommand;
-use GBProd\ICantDecide\Application\Form\AskQuestionType;
 use GBProd\ICantDecide\Application\Query\AvailableQuestionsQuery;
+use GBProd\ICantDecide\UI\Form\AskQuestionType;
 use League\Tactician\CommandBus;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
@@ -73,6 +73,7 @@ class AskController extends Controller
     public function ask(Request $request)
     {
         $command = new AskQuestionCommand();
+        $command->options = ['', '', ''];
 
         $form = $this->formFactory
             ->createBuilder(AskQuestionType::class, $command)

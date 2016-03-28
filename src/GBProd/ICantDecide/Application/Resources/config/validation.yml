@@ -6,3 +6,9 @@ GBProd\ICantDecide\Application\Command\AskQuestionCommand:
             - NotBlank: ~
             - GreaterThan: now
             - DateTime: ~
+        options:
+            - All:
+                - NotBlank:  ~
+                - Type:
+                    type: string
+            - NotBlank:  ~

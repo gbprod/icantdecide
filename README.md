@@ -12,22 +12,12 @@ Small and simple using my DDD stack :
  * [Domain event](https://github.com/gbprod/domain-event)
  * [Domain event bundle](https://github.com/gbprod/domain-event-bundle)
 
-
- * [ ] Read Model and Projector
- * [ ] Add Options to a question
+ * [ ] Options projection
+ * [ ] Search
  * [ ] Vote for a option
+
  * [ ] Unit tests :/
- * [ ] Behat
- * [ ] Agnostic responses
-    * [ ] Rest API json
-    * [ ] Rest API xml
- * [ ] i18n
- * [ ] Refactor controller (too fat)
- * [ ] Make web ui pretty
- * [ ] Use ES for the front
- * [ ] Event sourcing for ES
- * [ ] Write doc
- * 
+ * [ ] Event sourcing | Event store
  
 ### Installation
 

@@ -1,0 +1,8 @@
+GBProd\ICantDecide\CoreDomain\Question\Option:
+    type: entity
+    embedded:
+        id:
+            class: GBProd\ICantDecide\CoreDomain\Question\OptionIdentifier
+    fields:
+        text:
+            type: text

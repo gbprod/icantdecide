@@ -9,3 +9,6 @@ GBProd\ICantDecide\CoreDomain\Question\Question:
             type: text
         endDate:
             type: datetime
+    embedMany:
+        options:
+            targetDocument: GBProd\ICantDecide\CoreDomain\Question\Option

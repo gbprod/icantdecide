@@ -32,15 +32,26 @@ final class Question implements EventProvider
     private $endDate;
 
     /**
+     * @var array<Option>
+     */
+    private $options;
+    
+    /**
      * Ask a question
      *
-     * @param string $text
-     * @param array  $options
+     * @param QuestionIdentifier $text
+     * @param string             $text
+     * @param array              $options
+     * @param DateTimeImmutable  $endDate
      *
      * @return Question
      */
-    public static function ask(QuestionIdentifier $id, $text, \DateTimeImmutable $endDate)
-    {
+    public static function ask(
+        QuestionIdentifier $id, 
+        $text,
+        array $options,
+        \DateTimeImmutable $endDate
+    ) {
         if (empty($text)) {
             throw new \InvalidArgumentException("The text should not be blank.");
         }
@@ -48,8 +59,12 @@ final class Question implements EventProvider
         if ($endDate < new \DateTimeImmutable('now')) {
             throw new \InvalidArgumentException("The end date should be in the future.");
         }
-
-        $question = new self($id, $text, $endDate);
+    
+        if (count($options) <= 0) {
+            throw new \InvalidArgumentException("The question should have options.");
+        }
+        
+        $question = new self($id, $text, $options, $endDate);
 
         $question->raise(new QuestionAsked($question));
 
@@ -59,10 +74,15 @@ final class Question implements EventProvider
     /**
      * @param string $text
      */
-    private function __construct(QuestionIdentifier $id, $text, \DateTimeImmutable $endDate)
-    {
+    private function __construct(
+        QuestionIdentifier $id, 
+        $text, 
+        array $options, 
+        \DateTimeImmutable $endDate
+    ) {
         $this->id      = $id;
         $this->text    = $text;
+        $this->options = $options;
         $this->endDate = $endDate;
     }
 
@@ -84,6 +104,16 @@ final class Question implements EventProvider
     public function getText()
     {
         return $this->text;
+    }
+    
+    /**
+     * Question options
+     *
+     * @return Options
+     */
+    public function getOptions()
+    {
+        return $this->options;
     }
 
     /**
