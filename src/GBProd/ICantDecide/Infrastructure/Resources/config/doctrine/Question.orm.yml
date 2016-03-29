@@ -9,6 +9,8 @@ GBProd\ICantDecide\CoreDomain\Question\Question:
             type: text
         endDate:
             type: datetime
-    embedMany:
+    oneToMany:
         options:
-            targetDocument: GBProd\ICantDecide\CoreDomain\Question\Option
+            targetEntity: GBProd\ICantDecide\CoreDomain\Question\Option
+            cascade: ["persist", "remove"]
+            mappedBy: question_id

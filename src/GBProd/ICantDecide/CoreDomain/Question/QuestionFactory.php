@@ -21,6 +21,7 @@ final class QuestionFactory
     public function ask($text, array $optionsText, \DateTimeImmutable $endDate)
     {
         $questionIdentifier = QuestionIdentifier::generate();
+
         return Question::ask(
             $questionIdentifier,
             $text,
@@ -32,18 +33,18 @@ final class QuestionFactory
     private function createOptions($questionIdentifier, array $optionsText)
     {
         $position = 0;
+        $options = [];
         
-        return array_map(
-            function ($optionText) use ($position, $questionIdentifier) {
-                return Option::give(
-                    OptionIdentifier::build(
-                        $questionIdentifier->getValue(), 
-                        ++$position
-                    ),
-                    $optionText
-                );
-            },
-            $optionsText
-        );
+        foreach ($optionsText as $optionText) {
+            $options[] = Option::give(
+                OptionIdentifier::build(
+                    $questionIdentifier->getValue(), 
+                    ++$position
+                ),
+                $optionText
+            );
+        }
+        
+        return $options;
     }
 }
