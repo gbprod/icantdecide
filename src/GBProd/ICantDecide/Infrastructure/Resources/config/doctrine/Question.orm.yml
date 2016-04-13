@@ -9,8 +9,16 @@ GBProd\ICantDecide\CoreDomain\Question\Question:
             type: text
         endDate:
             type: datetime
-    oneToMany:
+    manyToMany:
         options:
             targetEntity: GBProd\ICantDecide\CoreDomain\Question\Option
             cascade: ["persist", "remove"]
-            mappedBy: question_id
+            joinTable:
+                name: question_options
+                joinColumns:
+                    question_id:
+                        referencedColumnName: id_value
+                inverseJoinColumns:
+                    option_id:
+                        referencedColumnName: id_value
+                        unique: true

@@ -5,66 +5,44 @@ namespace GBProd\ICantDecide\CoreDomain\Question;
 use Ramsey\Uuid\Uuid;
 
 /**
- * Identifier for option
+ * Identifier for options
  *
  * @author GBProd <contact@gb-prod.fr>
  */
 final class OptionIdentifier
 {
     /**
-     * @var Uuid
+     * @var mixed
      */
-    private $questionUuid;
-    
-    /**
-     * @var int
-     */
-    private $position;
-    
-    /**
-     * build a indentification
-     *
-     * @param Uuid $questionUuid
-     * @param int  $position
-     *
-     * @return PositionIdentifier
-     */
-    public static function build(Uuid $questionUuid, $position)
-    {
-        if ($position < 0) {
-            throw new \InvalidArgumentException("Position should not be positive integer.");
-        }
+    private $value;
 
-        return new self($questionUuid, $position);
+    /**
+     * Generate a new identifier
+     *
+     * @param mixed $id
+     *
+     * @return OptionIdentifier
+     */
+    public static function generate()
+    {
+        return new self(Uuid::uuid4());
     }
 
     /**
-     * @param Uuid $questionUuid
-     * @param int  $position
+     * @param mixed $value
      */
-    private function __construct($questionUuid, $position)
+    private function __construct($value)
     {
-        $this->questionUuid = $questionUuid;
-        $this->position     = $position;
+        $this->value = $value;
     }
 
     /**
-     * Get question identifier
+     * Get identifier value
      *
-     * @return Uuid
+     * @return mixed
      */
-    public function getQuestionUuid()
+    public function getValue()
     {
-        return $this->questionUuid;
-    }
-    
-    /**
-     * Get position
-     *
-     * @return integer
-     */
-    public function getPosition()
-    {
-        return $this->position;
+        return $this->value;
     }
 }

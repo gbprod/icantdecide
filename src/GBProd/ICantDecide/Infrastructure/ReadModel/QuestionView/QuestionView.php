@@ -22,7 +22,7 @@ class QuestionView
         $view->options = [];
         
         // foreach ($question->getOptions() as $option) {
-        //     $view->options[$option->getId()->getPosition()] = $option->getText();
+        //     $view->options[$option->getPosition()] = $option->getText();
         // }
 
         return $view;

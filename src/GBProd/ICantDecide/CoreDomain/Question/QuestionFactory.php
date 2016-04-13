@@ -37,11 +37,9 @@ final class QuestionFactory
         
         foreach ($optionsText as $optionText) {
             $options[] = Option::give(
-                OptionIdentifier::build(
-                    $questionIdentifier->getValue(), 
-                    ++$position
-                ),
-                $optionText
+                OptionIdentifier::generate(),
+                $optionText,
+                ++$position
             );
         }
         

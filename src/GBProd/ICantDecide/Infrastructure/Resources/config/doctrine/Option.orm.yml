@@ -7,3 +7,5 @@ GBProd\ICantDecide\CoreDomain\Question\Option:
     fields:
         text:
             type: text
+        position:
+            type: integer
