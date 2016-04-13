@@ -35,14 +35,23 @@ services:
                 name: doctrine.expression_builder
                 specification: GBProd\ICantDecide\CoreDomain\Specification\Question\IsAvailable
 
-    icantdecide_app.question_view.data_store:
-        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\ElasticDataStore
+    icantdecide_app.elastica.views_index:
+        class: Elastica\Index
+        factory: ["@elastica.default_client", "getIndex"]
         arguments:
-            - "@m6web_elasticsearch.client.views"
-            - "@serializer"
             - "views"
-            - "question_view"
 
+    icantdecide_app.elastica.question_view_type:
+        class: Elastica\Index
+        factory: ["@icantdecide_app.elastica.views_index", "getType"]
+        arguments:
+            - "question_view"
+            
+    icantdecide_app.question_view.data_store:
+        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\ElasticaDataStore
+        arguments:
+            - "@icantdecide_app.elastica.question_view_type"
+            - "@serializer"
 
     icantdecide_app.question_view.projector:
         class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\Projector
@@ -50,3 +59,11 @@ services:
             - "@icantdecide_app.question_view.data_store"
         tags:
             - { name: kernel.event_listener, event: Question.QuestionAsked, method: 'onQuestionAsked' }
+
+    icantdecide_app.question_view.provider:
+        class: GBProd\ICantDecide\Infrastructure\ReadModel\QuestionView\Provider
+        arguments:
+            - "@icantdecide_app.question_repository"
+            - "@serializer"
+        tags:
+            - { name: elastica.provider, index: views, type: question_view }

@@ -21,3 +21,5 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+    node: node
+    node_modules: /home/ubuntu/.nvm/versions/node/v4.4.0/lib/node_modules

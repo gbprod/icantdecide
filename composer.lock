@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f0c09bf07122b2edaa3c75cc50ae8b6b",
-    "content-hash": "a5cab6438fdbce4f0113de16c6b39cd3",
+    "hash": "e3d130c7f109fc77f97fb635c7288ab3",
+    "content-hash": "41a53e24141451e2c79ab45052279508",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -1165,17 +1165,105 @@
             "time": "2016-03-12 08:08:59"
         },
         {
-            "name": "gbprod/elasticsearch-extra-bundle",
-            "version": "v0.1.0",
+            "name": "gbprod/elastica-bundle",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/gbprod/elasticsearch-extra-bundle.git",
-                "reference": "d72a06512949afa8667a59b3ec603a128eea7bf1"
+                "url": "https://github.com/gbprod/elastica-bundle.git",
+                "reference": "61d98a30d7a7c895a6c6811ef945c6f3dbecf8dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gbprod/elasticsearch-extra-bundle/zipball/d72a06512949afa8667a59b3ec603a128eea7bf1",
-                "reference": "d72a06512949afa8667a59b3ec603a128eea7bf1",
+                "url": "https://api.github.com/repos/gbprod/elastica-bundle/zipball/61d98a30d7a7c895a6c6811ef945c6f3dbecf8dc",
+                "reference": "61d98a30d7a7c895a6c6811ef945c6f3dbecf8dc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "psr/log": "^1.0",
+                "ruflin/elastica": "^3.1",
+                "symfony/expression-language": "^2.3|^3.0",
+                "symfony/framework-bundle": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "symfony/twig-bundle": "~2.3|~3.0"
+            },
+            "type": "bundle",
+            "autoload": {
+                "psr-4": {
+                    "GBProd\\": "src/",
+                    "Tests\\GBProd\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GBProd",
+                    "email": "contact@gb-prod.fr"
+                }
+            ],
+            "description": "Really simple bundle to use Elastica within Symfony applications",
+            "time": "2016-04-11 21:38:08"
+        },
+        {
+            "name": "gbprod/elastica-provider-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gbprod/elastica-provider-bundle.git",
+                "reference": "04304f65aa28acda865e1519d88e1b6a789d8fc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gbprod/elastica-provider-bundle/zipball/04304f65aa28acda865e1519d88e1b6a789d8fc6",
+                "reference": "04304f65aa28acda865e1519d88e1b6a789d8fc6",
+                "shasum": ""
+            },
+            "require": {
+                "ruflin/elastica": "^3.0|^3.1",
+                "symfony/console": "^2.3|^3.0",
+                "symfony/event-dispatcher": "^2.3|^3.0",
+                "symfony/expression-language": "^2.4|^3.0",
+                "symfony/framework-bundle": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "bundle",
+            "autoload": {
+                "psr-4": {
+                    "GBProd\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GBProd",
+                    "email": "contact@gb-prod.fr"
+                }
+            ],
+            "description": "Bundle that can easely provide data in ElasticSearch using Elastica",
+            "time": "2016-04-13 11:37:47"
+        },
+        {
+            "name": "gbprod/elasticsearch-extra-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gbprod/elasticsearch-extra-bundle.git",
+                "reference": "150ab87d80f8aeed4fb66917c4ed3a64866fc3c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gbprod/elasticsearch-extra-bundle/zipball/150ab87d80f8aeed4fb66917c4ed3a64866fc3c3",
+                "reference": "150ab87d80f8aeed4fb66917c4ed3a64866fc3c3",
                 "shasum": ""
             },
             "require": {
@@ -1205,7 +1293,7 @@
                 }
             ],
             "description": "Extra tools for m6web/elasticsearch-bundle",
-            "time": "2016-03-25 21:02:54"
+            "time": "2016-04-09 20:39:37"
         },
         {
             "name": "gbprod/specification",
@@ -1700,24 +1788,30 @@
         },
         {
             "name": "m6web/elasticsearch-bundle",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/gbprod/ElasticsearchBundle",
-                "reference": "9fd43a6f19bac23c4d0cbb6a893d294faa8d7837"
+                "url": "https://github.com/M6Web/ElasticsearchBundle.git",
+                "reference": "a91de19424073d92c9ef490ad87f6c463d8cc0cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/M6Web/ElasticsearchBundle/zipball/a91de19424073d92c9ef490ad87f6c463d8cc0cd",
+                "reference": "a91de19424073d92c9ef490ad87f6c463d8cc0cd",
+                "shasum": ""
             },
             "require": {
                 "elasticsearch/elasticsearch": "~2.0",
                 "php": ">=5.5"
             },
             "require-dev": {
-                "atoum/atoum": "master-dev",
+                "atoum/atoum": "^2.6",
                 "m6web/coke": "~1.2.0",
                 "m6web/symfony2-coding-standard": "~1.2.0",
-                "symfony/config": "~2.3.0",
-                "symfony/dependency-injection": "~2.3.0",
-                "symfony/event-dispatcher": "~2.3.0",
-                "symfony/yaml": "~2.3"
+                "symfony/config": "^2.3|^3.0",
+                "symfony/dependency-injection": "^2.3|^3.0",
+                "symfony/event-dispatcher": "^2.3|^3.0",
+                "symfony/yaml": "^2.3|^3.0"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -1725,6 +1819,7 @@
                     "": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1735,20 +1830,20 @@
                 }
             ],
             "description": "Symfony2 Bundle on top of elasticsearch/elasticsearch-php",
-            "time": "2016-03-21 09:43:09"
+            "time": "2016-04-01 10:02:59"
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.1",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "a5f2734e8c16f3aa21b3da09715d10e15b4d2d45"
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a5f2734e8c16f3aa21b3da09715d10e15b4d2d45",
-                "reference": "a5f2734e8c16f3aa21b3da09715d10e15b4d2d45",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -1763,13 +1858,13 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
-                "swiftmailer/swiftmailer": "~5.3",
-                "videlalvaro/php-amqplib": "~2.4"
+                "swiftmailer/swiftmailer": "~5.3"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -1778,11 +1873,11 @@
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
             "type": "library",
             "extra": {
@@ -1813,7 +1908,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-03-13 16:08:35"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "paragonie/random_compat",
@@ -2037,16 +2132,16 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "8ffacee1171e33a1c129f424bf1ec36e062eba82"
+                "reference": "f942da7b505d1a294284ab343d05df42d02ad6d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/8ffacee1171e33a1c129f424bf1ec36e062eba82",
-                "reference": "8ffacee1171e33a1c129f424bf1ec36e062eba82",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f942da7b505d1a294284ab343d05df42d02ad6d9",
+                "reference": "f942da7b505d1a294284ab343d05df42d02ad6d9",
                 "shasum": ""
             },
             "require": {
@@ -2077,7 +2172,64 @@
                 }
             ],
             "description": "A lightweight implementation of CommonJS Promises/A for PHP",
-            "time": "2016-03-24 21:20:22"
+            "time": "2016-03-31 13:10:33"
+        },
+        {
+            "name": "ruflin/elastica",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruflin/Elastica.git",
+                "reference": "571dd533f56057f2afc5f447759b09bbcc012a0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/571dd533f56057f2afc5f447759b09bbcc012a0d",
+                "reference": "571dd533f56057f2afc5f447759b09bbcc012a0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~3.0",
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow using IAM authentication with Amazon ElasticSearch Service",
+                "egeloen/http-adapter": "Allow using httpadapter transport",
+                "guzzlehttp/guzzle": "Allow using guzzle 6 as the http transport (Requires php 5.5)",
+                "monolog/monolog": "Logging request"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elastica\\": "lib/Elastica/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Ruflin",
+                    "homepage": "http://ruflin.com/"
+                }
+            ],
+            "description": "Elasticsearch Client",
+            "homepage": "http://elastica.io/",
+            "keywords": [
+                "client",
+                "search"
+            ],
+            "time": "2016-03-18 07:56:36"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2362,16 +2514,16 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v2.10.0",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "82fd8f36e2cccbe94faf237403c48052d4d4b77e"
+                "reference": "d156f625dc3ce04f44e6d0ce36ae19cc35f51a97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/82fd8f36e2cccbe94faf237403c48052d4d4b77e",
-                "reference": "82fd8f36e2cccbe94faf237403c48052d4d4b77e",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/d156f625dc3ce04f44e6d0ce36ae19cc35f51a97",
+                "reference": "d156f625dc3ce04f44e6d0ce36ae19cc35f51a97",
                 "shasum": ""
             },
             "require": {
@@ -2390,7 +2542,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.9.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -2418,7 +2570,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2016-03-13 15:55:56"
+            "time": "2016-04-12 18:48:21"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -2763,16 +2915,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "09ae53562ce8b7842206efa217ec81442975f055"
+                "reference": "4e17cb2ecb3fd637097ebeb871fc0e2cbdd5e7ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/09ae53562ce8b7842206efa217ec81442975f055",
-                "reference": "09ae53562ce8b7842206efa217ec81442975f055",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/4e17cb2ecb3fd637097ebeb871fc0e2cbdd5e7ff",
+                "reference": "4e17cb2ecb3fd637097ebeb871fc0e2cbdd5e7ff",
                 "shasum": ""
             },
             "require": {
@@ -2855,10 +3007,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
-                    "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
-                    "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
-                    "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
+                    "Symfony\\Bridge\\": "src/Symfony/Bridge/",
                     "Symfony\\Bundle\\": "src/Symfony/Bundle/",
                     "Symfony\\Component\\": "src/Symfony/Component/"
                 },
@@ -2888,7 +3037,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-02-28 21:33:29"
+            "time": "2016-03-30 10:41:14"
         },
         {
             "name": "twbs/bootstrap",
@@ -3899,16 +4048,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v2.8.3",
+            "version": "v2.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "ee8ead4f78e21ed6c873d1cc19e141949d9ed493"
+                "reference": "a967db6a4cd5d276cf849d01b29dba559e149978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/ee8ead4f78e21ed6c873d1cc19e141949d9ed493",
-                "reference": "ee8ead4f78e21ed6c873d1cc19e141949d9ed493",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/a967db6a4cd5d276cf849d01b29dba559e149978",
+                "reference": "a967db6a4cd5d276cf849d01b29dba559e149978",
                 "shasum": ""
             },
             "require": {
@@ -3950,12 +4099,16 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2016-01-21 09:24:53"
+            "time": "2016-03-23 13:45:24"
         }
     ],
     "aliases": [],
     "minimum-stability": "alpha",
-    "stability-flags": [],
+    "stability-flags": {
+        "gbprod/elasticsearch-extra-bundle": 20,
+        "gbprod/elastica-provider-bundle": 20,
+        "gbprod/elastica-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

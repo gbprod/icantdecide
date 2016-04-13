@@ -18,14 +18,3 @@ Small and simple using my DDD stack :
 
  * [ ] Unit tests :/
  * [ ] Event sourcing | Event store
- 
-### Installation
-
-```bash
-composer update
-php bin/console doctrine:database:create
-php bin/console doctrine:schema:create
-php bin/console elasticsearch:index:create views question_view
-php bin/console assetic:dump
-php bin/console braincrafted:bootstrap:install
-```

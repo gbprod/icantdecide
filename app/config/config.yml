@@ -71,18 +71,12 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-m6web_elasticsearch:
-    default_client: views
-    clients:
-        views:
-            hosts:
-                - '%elasticsearch_host%:%elasticsearch_port%'
 
-elasticsearch_extra:
-    clients:
-        views:
-            indices:
-                question_view: ~
+# elasticsearch_extra:
+#     indices:
+#         views:
+#             mappings:
+#                 question_view: ~
 
 assetic:
     filters:
@@ -91,3 +85,12 @@ assetic:
             node_paths: [%node_modules%]
             apply_to: "\\.less$"
         cssrewrite: ~
+
+elastica:
+    clients:
+        default:
+            host: '%elasticsearch_host%'
+            port: '%elasticsearch_port%'
+            
+elastica_provider:
+    default_client: elastica.default_client

@@ -1,19 +1,15 @@
 {    
     "repositories": [{
-        "type": "git",
-        "url": "https://github.com/gbprod/ElasticsearchBundle"
-    }, {
-            "type": "package",
-            "package": {
-                "name": "jquery/jquery",
-                "version": "1.11.1",
-                "dist": {
-                    "url": "https://code.jquery.com/jquery-1.11.1.js",
-                    "type": "file"
-                }
+        "type": "package",
+        "package": {
+            "name": "jquery/jquery",
+            "version": "1.11.1",
+            "dist": {
+                "url": "https://code.jquery.com/jquery-1.11.1.js",
+                "type": "file"
             }
         }
-    ],
+    }],
     "name": "gbprod/icantdecide",
     "license": "MIT",
     "type": "project",
@@ -42,13 +38,14 @@
         "ramsey/uuid-doctrine": "^1.1",
         "gbprod/doctrine-specification-bundle": "^0.1",
         "gbprod/domain-event-bundle": "^0.1",
-        "m6web/elasticsearch-bundle": "1.0.1",
-        "gbprod/elasticsearch-extra-bundle": "^0.1",
+        "gbprod/elasticsearch-extra-bundle": "dev-master",
         "gbprod/uuid-normalizer": "^1.0",
         "symfony/assetic-bundle": "^2.8",
         "braincrafted/bootstrap-bundle": "^2.2",
         "twbs/bootstrap": "3.0.*",
-        "jquery/jquery":  "1.11.*"
+        "jquery/jquery":  "1.11.*",
+        "gbprod/elastica-provider-bundle": "dev-master",
+        "gbprod/elastica-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

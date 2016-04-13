@@ -80,6 +80,18 @@ class DoctrineQuestionRepository implements QuestionRepository
     /**
      * {inheritdoc}
      */
+    public function countAll()
+    {
+        $qb = $this->em->createQueryBuilder();
+        $qb->select('count(q)');
+        $qb->from(Question::class, 'q');
+        
+        return $qb->getQuery()->getSingleScalarResult();   
+    }
+    
+    /**
+     * {inheritdoc}
+     */
     public function findSatisfying(Specification $specification)
     {
         $qb = $this

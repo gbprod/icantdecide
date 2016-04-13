@@ -21,9 +21,9 @@ class QuestionView
         $view->endDate = $question->getEndDate()->format('Y-m-d H:i:s');
         $view->options = [];
         
-        foreach ($question->getOptions() as $option) {
-            $view->options[$option->getId()->getPosition()] = $option->getText();
-        }
+        // foreach ($question->getOptions() as $option) {
+        //     $view->options[$option->getId()->getPosition()] = $option->getText();
+        // }
 
         return $view;
     }

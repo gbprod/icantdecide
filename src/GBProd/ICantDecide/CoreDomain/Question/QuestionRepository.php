@@ -39,6 +39,13 @@ interface QuestionRepository
     public function findAll();
     
     /**
+     * Count all questions
+     *
+     * @return int
+     */
+    public function countAll();
+    
+    /**
      * Find questions satisfying specifications
      *
      * @param Specification $specification
