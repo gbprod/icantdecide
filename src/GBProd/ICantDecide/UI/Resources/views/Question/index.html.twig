@@ -5,6 +5,11 @@
 <div>
     <h4>{{ question.text }}</h4>
     <p>{{ question.endDate|date('Y-m-d H:i:s') }}</p>
+    <ul>
+      {% for option in question.options %}
+        <li>{{ option.text }}</li>
+      {% endfor %}
+    </ul>
 </div>
 {% endfor %}
 

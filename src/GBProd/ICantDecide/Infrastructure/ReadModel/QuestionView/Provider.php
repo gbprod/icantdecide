@@ -20,7 +20,7 @@ class Provider extends BulkProvider
     public function populate()
     {
         $questions = $this->repository->findAll();
-        
+
         foreach ($questions as $question) {
             $view = QuestionView::fromQuestion($question);
             
@@ -32,7 +32,7 @@ class Provider extends BulkProvider
     }
     
     public function count()
-    {
+    {   
         return $this->repository->countAll();
     }
 }

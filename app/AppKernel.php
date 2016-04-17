@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new GBProd\DoctrineSpecificationBundle\DoctrineSpecificationBundle(),
             new GBProd\ElasticaBundle\ElasticaBundle(),
             new GBProd\ElasticaProviderBundle\ElasticaProviderBundle(),
+            new GBProd\ElasticaExtraBundle\ElasticaExtraBundle(),
             new GBProd\DomainEventBundle\DomainEventBundle(),
             new League\Tactician\Bundle\TacticianBundle(),
             new GBProd\ICantDecide\Application\ApplicationBundle(),

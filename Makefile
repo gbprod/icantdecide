@@ -25,7 +25,7 @@ help:
 # Start #
 #########
 
-start-c9:
+start:
 	mysql-ctl start
 	../elasticsearch/bin/elasticsearch &
 	
@@ -56,8 +56,18 @@ update-deps:
 update-database:
 	php bin/console doctrine:schema:update --force
 
-provide:
+#################
+# Elasticsearch #
+#################
+
+provide-elasticsearch:
 	php bin/console elasticsearch:provide
+
+delete-elasticsearch:
+	php bin/console elasticsearch:index:delete views --force
+
+create-elasticsearch:
+	php bin/console elasticsearch:index:create views
 
 ########
 # Test #
@@ -88,3 +98,14 @@ deploy-assets:
 
 deploy-warmup:
 	php bin/console cache:warmup --env=prod
+
+#########
+# Tools #
+#########
+
+reset-data: reset-database delete-elasticsearch create-elasticsearch provide-elasticsearch
+	
+reset-database: drop-database install-database
+
+drop-database:
+	php bin/console doctrine:database:drop --if-exists --force

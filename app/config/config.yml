@@ -72,12 +72,6 @@ swiftmailer:
     spool:     { type: memory }
 
 
-# elasticsearch_extra:
-#     indices:
-#         views:
-#             mappings:
-#                 question_view: ~
-
 assetic:
     filters:
         less:
@@ -94,3 +88,26 @@ elastica:
             
 elastica_provider:
     default_client: elastica.default_client
+
+elastica_extra:
+    default_client: elastica.default_client
+    indices:
+        views:
+            mappings:
+                question_view: 
+                    properties : 
+                        text: 
+                            type : string
+                            analyzer: standard
+                        endDate:
+                            type: date
+                            format: "yyyy-MM-dd HH:mm:ss"
+                        options:
+                            properties:
+                                text: 
+                                    type : string
+                                position: 
+                                    type : integer
+                                    index: not_analyzed
+                            # analyzer: standard
+                        
