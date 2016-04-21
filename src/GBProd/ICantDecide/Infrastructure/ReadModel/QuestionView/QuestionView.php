@@ -23,8 +23,9 @@ class QuestionView
         
         foreach ($question->getOptions() as $option) {
             $view->options[] = [
-                'text' => $option->getText(),
+                'text'     => $option->getText(),
                 'position' => $option->getPosition(),
+                'id'       => $option->getId()->getValue(),
             ];
         }
 

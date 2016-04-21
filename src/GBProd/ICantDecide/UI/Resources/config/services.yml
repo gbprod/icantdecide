@@ -7,6 +7,15 @@ services:
             - '@form.factory'
             - '@router'
             - '@session'
+            
+    icantdecide.question.vote_controller:
+        class: GBProd\ICantDecide\UI\Controller\Question\VoteController
+        arguments:
+            - '@tactician.commandbus'
+            - '@templating'
+            - '@form.factory'
+            - '@router'
+            - '@session'
 
     icantdecide.question.index_controller:
         class: GBProd\ICantDecide\UI\Controller\Question\IndexController
@@ -27,3 +36,17 @@ services:
             - '@tactician.commandbus'
         tags:
             - { name: console.command }
+
+    icantdecide.twig_extension.vote_form:
+        class: GBProd\ICantDecide\UI\Twig\Extension\VoteFormExtension
+        arguments:
+            - '@icantdecide.form.vote'
+            - '@router'
+        tags:
+            - { name: twig.extension }
+
+    icantdecide.form.vote:
+        factory: ['@form.factory', 'createBuilder']
+        class: Symfony\Component\Form\Form
+        arguments:
+            - GBProd\ICantDecide\UI\Form\VoteType

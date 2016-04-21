@@ -28,6 +28,15 @@ services:
                 name: tactician.handler
                 command: GBProd\ICantDecide\Application\Command\AskQuestionCommand
 
+    icantdecide_app.vote_handler:
+        class: GBProd\ICantDecide\Application\Handler\VoteHandler
+        arguments:
+            - "@icantdecide_app.question_repository"
+        tags:
+            -
+                name: tactician.handler
+                command: GBProd\ICantDecide\Application\Command\VoteCommand
+
     icantdecide_app.question.expr_builder.is_available:
         class: GBProd\ICantDecide\Infrastructure\Question\ExpressionBuilder\IsAvailableBuilder
         tags:

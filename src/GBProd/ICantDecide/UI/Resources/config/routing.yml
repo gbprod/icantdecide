@@ -5,3 +5,7 @@ question_index:
 question_ask:
     path: /ask
     defaults:  { _controller: icantdecide.question.ask_controller:ask }
+
+question_vote:
+    path: /vote
+    defaults:  { _controller: icantdecide.question.vote_controller:vote }

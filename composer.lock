@@ -1116,12 +1116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gbprod/elastica-bundle.git",
-                "reference": "61d98a30d7a7c895a6c6811ef945c6f3dbecf8dc"
+                "reference": "cbea78121f21c748d8ac0096428a10cb905f3527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gbprod/elastica-bundle/zipball/61d98a30d7a7c895a6c6811ef945c6f3dbecf8dc",
-                "reference": "61d98a30d7a7c895a6c6811ef945c6f3dbecf8dc",
+                "url": "https://api.github.com/repos/gbprod/elastica-bundle/zipball/cbea78121f21c748d8ac0096428a10cb905f3527",
+                "reference": "cbea78121f21c748d8ac0096428a10cb905f3527",
                 "shasum": ""
             },
             "require": {
@@ -1153,7 +1153,7 @@
                 }
             ],
             "description": "Really simple bundle to use Elastica within Symfony applications",
-            "time": "2016-04-11 21:38:08"
+            "time": "2016-04-20 07:58:39"
         },
         {
             "name": "gbprod/elastica-extra-bundle",
@@ -1161,12 +1161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gbprod/elastica-extra-bundle.git",
-                "reference": "5f7b966ae00e0ca018f2537e5f5f96505b8d7d6f"
+                "reference": "21a3f4953389ca0bf0759c4d00d003d4aa1a8834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gbprod/elastica-extra-bundle/zipball/5f7b966ae00e0ca018f2537e5f5f96505b8d7d6f",
-                "reference": "5f7b966ae00e0ca018f2537e5f5f96505b8d7d6f",
+                "url": "https://api.github.com/repos/gbprod/elastica-extra-bundle/zipball/21a3f4953389ca0bf0759c4d00d003d4aa1a8834",
+                "reference": "21a3f4953389ca0bf0759c4d00d003d4aa1a8834",
                 "shasum": ""
             },
             "require": {
@@ -1196,7 +1196,7 @@
                 }
             ],
             "description": "Bundle providing extra elastica tools for managing indices and types settings",
-            "time": "2016-04-17 16:34:54"
+            "time": "2016-04-19 12:01:18"
         },
         {
             "name": "gbprod/elastica-provider-bundle",
@@ -1204,12 +1204,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gbprod/elastica-provider-bundle.git",
-                "reference": "a7b350e6d245f3c8d04dea938d0e4e7c8b49a4ad"
+                "reference": "25aa18448e0a56c491efd332b8eda8457631e46a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gbprod/elastica-provider-bundle/zipball/a7b350e6d245f3c8d04dea938d0e4e7c8b49a4ad",
-                "reference": "a7b350e6d245f3c8d04dea938d0e4e7c8b49a4ad",
+                "url": "https://api.github.com/repos/gbprod/elastica-provider-bundle/zipball/25aa18448e0a56c491efd332b8eda8457631e46a",
+                "reference": "25aa18448e0a56c491efd332b8eda8457631e46a",
                 "shasum": ""
             },
             "require": {
@@ -1239,7 +1239,7 @@
                 }
             ],
             "description": "Bundle that can easely provide data in ElasticSearch using Elastica",
-            "time": "2016-04-16 19:53:52"
+            "time": "2016-04-17 19:37:00"
         },
         {
             "name": "gbprod/specification",

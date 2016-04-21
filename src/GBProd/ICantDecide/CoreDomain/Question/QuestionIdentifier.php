@@ -27,6 +27,18 @@ final class QuestionIdentifier
     {
         return new self(Uuid::uuid4());
     }
+    
+    /**
+     * Create a identifier
+     *
+     * @param mixed $id
+     *
+     * @return QuestionIdentifier
+     */
+    public static function create($uuid)
+    {
+        return new self(Uuid::fromString($uuid));
+    }
 
     /**
      * @param mixed $value

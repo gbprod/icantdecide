@@ -27,7 +27,7 @@ help:
 
 start:
 	mysql-ctl start
-	../elasticsearch/bin/elasticsearch &
+	../elasticsearch/bin/elasticsearch
 	
 ###########
 # Install #

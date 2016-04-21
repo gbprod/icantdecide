@@ -7,7 +7,10 @@
     <p>{{ question.endDate|date('Y-m-d H:i:s') }}</p>
     <ul>
       {% for option in question.options %}
-        <li>{{ option.text }}</li>
+        <li>
+          {{ option.text }} <span class="badge">42</span>
+          {{ vote_form(question.id, option.id) }}
+        </li>
       {% endfor %}
     </ul>
 </div>
